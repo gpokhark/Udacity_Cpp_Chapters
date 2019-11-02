@@ -1,0 +1,8 @@
+main1
+The int a = 5
+The int b = 10
+The int a still = 5
+main2
+The int a = 5
+The int b = 10
+The int a now = 10
