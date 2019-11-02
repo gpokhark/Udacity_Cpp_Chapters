@@ -25,15 +25,15 @@ std::vector<State> ParseLine(std::string line)
         // TODO: Modify the line below to push_back
         // a State::kEmpty if n is 0, and push_back
         // a State::kObstacle otherwise.
-        //row.push_back(n == 0 ? State::kEmpty : State::kObstacle);
-        if (n == 0)
-        {
-            row.push_back(State::kEmpty);
-        }
-        else
-        {
-            row.push_back(State::kObstacle);
-        }
+        row.push_back(n == 0 ? State::kEmpty : State::kObstacle);
+        // if (n == 0)
+        // {
+        //     row.push_back(State::kEmpty);
+        // }
+        // else
+        // {
+        //     row.push_back(State::kObstacle);
+        // }
     }
     return row;
 }
