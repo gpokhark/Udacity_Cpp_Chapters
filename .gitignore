@@ -59,3 +59,5 @@ _deps
 build/
 # ignore the folder called ouput
 output/
+# ignore the outputs as well
+output
