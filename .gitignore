@@ -54,3 +54,8 @@ _deps
 *-prefix/
 
 # End of https://www.gitignore.io/api/c++,cmake
+
+# ignore the folder called build anywhere, but not files called build
+build/
+# ignore the folder called ouput
+output/
