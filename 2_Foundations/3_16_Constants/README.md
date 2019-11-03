@@ -1,5 +1,12 @@
-
 # Constants
+In [A Tour of C++, Bjarne Stroustrup](http://www.stroustrup.com/Tour.html) writes:
+
+C++ supports two notions of immutability:
+
+* `const`: meaning roughly " I promise not to change this value."...The compiler enforces the promise made by `const`....
+* `constexpr`: meaning roughly "to be evaluated at compile time." This is used primarily to specify constants...
+
+## Constants
 
 This example highlights how to use `const` to promise not to modify a variable, even though the variable can only be evaluated at run time.
 
