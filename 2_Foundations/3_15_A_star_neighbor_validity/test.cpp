@@ -176,7 +176,7 @@ void TestSearch()
          << "\n";
     cout << "Search Function Test (Partial): ";
     int goal[2]{4, 5};
-    auto board = ReadBoardFile("1.board");
+    auto board = ReadBoardFile("../files/1.board");
 
     std::cout.setstate(std::ios_base::failbit); // Disable cout
     auto output = Search(board, goal, goal);
