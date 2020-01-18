@@ -45,3 +45,8 @@ A major disadvantage is that the caller does not always know what will happen to
 Let us now look at an example of passing a variable by reference, shown in the code on the right.
 
 To pass a variable by reference, we simply declare the function parameters as references using `&` rather than as normal variables. When the function is called, `val` will become a reference to the argument. Since a reference to a variable is treated exactly the same as the variable itself, any changes made to the reference are passed through to the argument!
+
+# Quiz : Modifying several parameters
+An additional advantage of passing variables by reference is the possibility to modify several variables. When using the function return value for such a purpose, returning several variables is usually very cumbersome.
+
+Your task here is to create a function `AddFive` that modifies the `int` input variable by adding 5 and modifies the `bool` input variable to be `true`. In the code to the right you will find the function call in `main()`.
