@@ -11,7 +11,7 @@ class MyClass {
 
   void* operator new(size_t size) {
     std::cout << "new: Allocating " << size << " bytes of memory. \n";
-    void* p = malloc(size);
+    void* p = malloc(size);  // you can use new operator here
     return p;
   }
 
