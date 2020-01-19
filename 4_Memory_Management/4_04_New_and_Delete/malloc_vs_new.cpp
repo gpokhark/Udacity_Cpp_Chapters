@@ -27,10 +27,19 @@ int main() {
   //   myClass->setNumber(42);  // EXC_BAD_ACCESS
   //   free(myClass);
 
-  // allocate memory using new
-  MyClass *myClass = new MyClass();
+  //   // allocate memory using new
+  //   MyClass *myClass = new MyClass();
+  //   myClass->setNumber(42);  // works as expected
+  //   delete myClass;
+
+  // allocate memory using placement new
+  void *memory = malloc(sizeof(MyClass));
+  MyClass *myClass = new (memory) MyClass();
   myClass->setNumber(42);  // works as expected
-  delete myClass;
+  // call the desctructor on the object explicitly
+  myClass->~MyClass();  // object->~MyClass();
+  // free the memory explicitly
+  free(memory);
 
   return 0;
 }
