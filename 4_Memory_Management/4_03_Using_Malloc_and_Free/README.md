@@ -55,3 +55,24 @@ MyStruct *p = (MyStruct*)calloc(4,sizeof(MyStruct));
 p[0].i = 1; p[0].d = 3.14159; p[0].a[0] = 'a';
 ```
 After defining the struct `MyStruct` which contains a number of data primitives, a block of memory four times the size of `MyStruct` is created using the `calloc` command. As can be seen, the various data elements can be accessed very conveniently.
+
+# Changing the Size of Memory Blocks¶
+The size of the memory area reserved with `malloc` or `calloc` can be increased or decreased with the `realloc` function.
+
+`pointer_name = (cast-type*) realloc( (cast-type*)old_memblock, new_size );`
+
+To do this, the function must be given a pointer to the previous memory area and the new size in bytes. Depending on the compiler, the reserved memory area is either (a) expanded or reduced internally (if there is still enough free heap after the previously reserved memory area) or (b) a new memory area is reserved in the desired size and the old memory area is released afterwards.
+
+The data from the old memory area is retained, i.e. if the new memory area is larger, the data will be available within new memory area as well. If the new memory area is smaller, the data from the old area will be available only up until the site of the new area - the rest is lost.
+
+In the example on the right, a block of memory of initially 8 bytes (two integers) is resized to 16 bytes (four integers) using `realloc`.
+
+Note that realloc has been used to increase the memory size and then decrease it immediately after assigning the values 3 and 4 to the new blocks. The output looks like the following:
+
+```c++
+address=0x100300060, value=1
+address=0x100300064, value=2
+address=0x100300068, value=3
+address=0x10030006c, value=4
+```
+Interestingly, the pointers `p+2` and `p+3` can still access the memory location they point to. Also, the original data (numbers 3 and 4) is still there. So `realloc` will not erase memory but merely mark it as "available" for future allocations. It should be noted however that accessing a memory location after such an operation must be avoided as it could cause a segmentation fault. We will encounter segmentation faults soon when we discuss "dangling pointers" in one of the next lessons.
