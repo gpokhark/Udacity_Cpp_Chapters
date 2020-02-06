@@ -44,8 +44,6 @@ A unique pointer is constructed using the following syntax:
 %%ulab_page_divider
 --><hr/>
 
-[Video](https://video.udacity-data.com/topher/2019/September/5d865440_nd213-c03-l05-02.2-smart-pointers-sc/nd213-c03-l05-02.2-smart-pointers-sc_720p.mp4)
-
 In the example on the right we will see how a unique pointer is constructed and how it compares to a raw pointer.
 
 The function `RawPointer` contains the familiar steps of (1) allocating memory on the heap with new and storing the address in a pointer variable, (2) assigning a value to the memory block using the dereferencing operator  `*` and (3) finally deleting the resource on the heap. As we already know, forgetting to call delete will result in a memory leak. 
@@ -58,7 +56,7 @@ The smart pointer destructor contains the call to delete, and because the smart 
 %%ulab_page_divider
 --><hr/>
 
-
+[Video](https://video.udacity-data.com/topher/2019/September/5d865440_nd213-c03-l05-02.2-smart-pointers-sc/nd213-c03-l05-02.2-smart-pointers-sc_720p.mp4)
 
 <!--
 %%ulab_page_divider
