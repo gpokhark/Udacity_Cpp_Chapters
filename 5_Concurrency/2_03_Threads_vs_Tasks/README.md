@@ -95,3 +95,8 @@ In `main()`, a for-loop starts a configurable number of tasks that can either be
   <img src="./image_5.png"></img>
 
   In this last example, the same 10 square roots are computed sequentially. Surprising, the overall runtime is at only 0.01 milliseconds - an astounding difference to the asynchronous execution and a stark reminder that starting and managing threads takes a significant amount of time. It is therefore not a general advantage if computations are performed in parallel: It must be carefully weighed with regard to the computational effort whether parallelization makes sense.
+
+# Quiz
+![Quiz](./quiz.png)
+
+[Additional Read](https://blog.slaks.net/2013-10-11/threads-vs-tasks/)
